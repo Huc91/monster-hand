@@ -12,7 +12,7 @@ import bite from './bite.png';
 import open from './open.png';
 
 
-function Hand(){
+function HandPose(){
 
   let hands = [];
   let top = 0;
@@ -101,4 +101,4 @@ function Hand(){
 
 }
 
-export default Hand
+export default HandPose

@@ -1,4 +1,4 @@
-import Hand from './Hand';
+import HandPose from './HandPose';
 
 import './App.css';
 
@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         Monster
       </header>
-      <Hand></Hand>
+      <HandPose />
     </div>
   );
 }
