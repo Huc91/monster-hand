@@ -5,9 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Monster
-      </header>
+      <header className="App-header">Monster</header>
       <HandPose />
     </div>
   );
