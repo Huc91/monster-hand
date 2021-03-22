@@ -10,8 +10,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 32px;
+  background-color: #65499c;
+  min-height: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,11 +24,42 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Loading {
+  position: absolute;
+}
+
+.Info {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+}
+
+.InfoIcon {
+  animation: changeBg 3s infinite;
+  width:100px;
+  height:100px;
+}
+
+.Payoff {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 14px;
+}
+
+@keyframes changeBg {
+  0%  {background-image: url("./hand-open.png");}
+  10%  {background-image: url("./hand-open.png");}
+  20%  {background-image: url("./hand-open.png");}
+  30%  {background-image: url("./hand-open.png");}
+  40%  {background-image: url("./hand-open.png");}
+  50% {background-image: url("./hand-close.png");}
+  60% {background-image: url("./hand-close.png");}
+  70% {background-image: url("./hand-close.png");}
+  80% {background-image: url("./hand-close.png");}
+  90% {background-image: url("./hand-close.png");}
+  100% {background-image: url("./hand-close.png");}
 }

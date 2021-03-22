@@ -1,6 +1,16 @@
+video {
+  opacity: 0.88;
+  position: absolute;
+  width: 20%;
+  right: 0;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 .monster {
   position: absolute;
+  top: 33%;
+  left: 0;
   width: 100px;
   height: 100px;
-  background-color: blueviolet;
 }

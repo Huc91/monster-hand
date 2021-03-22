@@ -10,12 +10,11 @@ import './Hand.css';
 import bite from './bite.png';
 import open from './open.png';
 
-function HandPose() {
-  let hands = [];
-  let top = 0;
-  let left = 0;
+function HandPose(props) {
+
+  let predictions = [];
   const w = 640,
-    h = 480;
+  h = 480;
 
   const videoRef = useRef(null);
 
@@ -32,9 +31,9 @@ function HandPose() {
       });
   };
 
-  function rectangle(top, left, biting) {
+  function addCrocodile(biting) {
     const element = (
-      <div className="monster" style={{ top: 0, left: 0 }}>
+      <div className="monster">
         <img src={biting ? bite : open} alt="monster-sprite"></img>
       </div>
     );
@@ -54,22 +53,17 @@ function HandPose() {
 
     function modelReady() {
       console.log('Model Ready!');
+      props.sendLoading();
     }
 
     handpose.on('predict', (results, err) => {
-      hands = results[0];
-      top = hands?.boundingBox?.topLeft
-        ? hands.boundingBox.topLeft[1] + h / 2
-        : h / 2;
-      left = hands?.boundingBox?.topLeft
-        ? hands.boundingBox.topLeft[0] + w / 2
-        : w / 2;
-      if (hands) {
-        const estimatedGestures = GE.estimate(hands.landmarks, 7.5);
+      predictions = results[0];
+      if (predictions) {
+        const estimatedGestures = GE.estimate(predictions.landmarks, 7.5);
         console.log('gesture-->', estimatedGestures);
-        rectangle(top, left, estimatedGestures.gestures.length);
+        addCrocodile(estimatedGestures.gestures.length);
       } else {
-        rectangle(top, left);
+        addCrocodile();
       }
     });
   };
@@ -81,7 +75,7 @@ function HandPose() {
 
   return (
     <div>
-      <video ref={videoRef} />
+      <video id="webcam-strem" ref={videoRef} />
       <div id="hand"></div>
     </div>
   );
