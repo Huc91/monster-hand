@@ -9,8 +9,12 @@ video {
 
 .monster {
   position: absolute;
-  top: 33%;
+  top: 25%;
   left: 0;
-  width: 100px;
-  height: 100px;
+  width: 42vw;
+  height: auto;
+}
+
+.sprite {
+  width: 100%;
 }

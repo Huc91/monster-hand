@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useRef, useState, } from 'react';
 
 // Import of machine learning magic
 import * as ml5 from 'ml5';
@@ -11,6 +10,8 @@ import bite from './bite.png';
 import open from './open.png';
 
 function HandPose(props) {
+
+  const [biting, setBiting] = useState(null);
 
   let predictions = [];
   const w = 640,
@@ -30,15 +31,6 @@ function HandPose(props) {
         console.error('error:', err);
       });
   };
-
-  function addCrocodile(biting) {
-    const element = (
-      <div className="monster">
-        <img src={biting ? bite : open} alt="monster-sprite"></img>
-      </div>
-    );
-    ReactDOM.render(element, document.getElementById('hand'));
-  }
 
   const crocodileGesture = new fp.GestureDescription('crocodile');
   crocodileGesture.addCurl(fp.Finger.Index, fp.FingerCurl.HalfCurl, 1.0);
@@ -61,9 +53,9 @@ function HandPose(props) {
       if (predictions) {
         const estimatedGestures = GE.estimate(predictions.landmarks, 7.5);
         console.log('gesture-->', estimatedGestures);
-        addCrocodile(estimatedGestures.gestures.length);
+        setBiting(estimatedGestures.gestures.length);
       } else {
-        addCrocodile();
+        setBiting(false);
       }
     });
   };
@@ -74,9 +66,11 @@ function HandPose(props) {
   }, [videoRef]);
 
   return (
-    <div>
+    <div className="HandPose">
       <video id="webcam-strem" ref={videoRef} />
-      <div id="hand"></div>
+      <div className="monster">
+        <img className="sprite" src={biting ? bite : open} alt="monster-sprite"></img>
+      </div>
     </div>
   );
 }
