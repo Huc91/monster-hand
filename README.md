@@ -14,9 +14,10 @@ Built with [ml5.js](https://ml5js.org/) and [React](https://reactjs.org/)
 
 ## Purpose
 
-*Machine learning is fun
-*I wanted to build something with handpose and tensorflow
-*Replicate what my dog Bonn is doing to play
+- Machine learning is fun
+- I wanted to build something with handpose and tensorflow
+- Expand it in a videogame
+- Replicate what my dog Bonn is doing to play with me
 
 ## Get started
 
