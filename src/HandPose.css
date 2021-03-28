@@ -7,7 +7,7 @@ video {
   transform: scaleX(-1);
 }
 
-.monster {
+.hand-pose__monster {
   position: absolute;
   top: 25%;
   left: 0;
@@ -15,6 +15,6 @@ video {
   height: auto;
 }
 
-.sprite {
+.monster__sprite {
   width: 100%;
 }

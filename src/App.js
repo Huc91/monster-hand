@@ -12,17 +12,17 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">Monster Hand</header>
-      <div className="Loading">
+    <div className="app">
+      <header className="app__header">Monster Hand</header>
+      <div className="app__loader">
         { isLoading ? 'Loading model...' : ''}
       </div>
-      <div className="Info">
+      <div className="app__tutorial">
         Use your hand to bite
-        <div className="InfoIcon" />
+        <div className="tutorial__icon" />
       </div>
-      <HandPose sendLoading={ handleLoading }/>
-      <div className="Payoff">
+      <HandPose sendLoading={ handleLoading } isLoading={isLoading}/>
+      <div className="app__credits">
         Luca Ucciero 2021
       </div>
     </div>
