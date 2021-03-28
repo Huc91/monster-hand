@@ -26,8 +26,8 @@
 
 .tutorial__icon {
   animation: changeBg 3s infinite;
-  width:100px;
-  height:100px;
+  width: 100px;
+  height: 100px;
 }
 
 .app__credits {
@@ -38,15 +38,37 @@
 }
 
 @keyframes changeBg {
-  0%  {background-image: url("./assets/hand-open.png");}
-  10%  {background-image: url("./assets/hand-open.png");}
-  20%  {background-image: url("./assets/hand-open.png");}
-  30%  {background-image: url("./assets/hand-open.png");}
-  40%  {background-image: url("./assets/hand-open.png");}
-  50% {background-image: url("./assets/hand-close.png");}
-  60% {background-image: url("./assets/hand-close.png");}
-  70% {background-image: url("./assets/hand-close.png");}
-  80% {background-image: url("./assets/hand-close.png");}
-  90% {background-image: url("./assets/hand-close.png");}
-  100% {background-image: url("./assets/hand-close.png");}
+  0% {
+    background-image: url('./assets/hand-open.png');
+  }
+  10% {
+    background-image: url('./assets/hand-open.png');
+  }
+  20% {
+    background-image: url('./assets/hand-open.png');
+  }
+  30% {
+    background-image: url('./assets/hand-open.png');
+  }
+  40% {
+    background-image: url('./assets/hand-open.png');
+  }
+  50% {
+    background-image: url('./assets/hand-close.png');
+  }
+  60% {
+    background-image: url('./assets/hand-close.png');
+  }
+  70% {
+    background-image: url('./assets/hand-close.png');
+  }
+  80% {
+    background-image: url('./assets/hand-close.png');
+  }
+  90% {
+    background-image: url('./assets/hand-close.png');
+  }
+  100% {
+    background-image: url('./assets/hand-close.png');
+  }
 }

@@ -1,5 +1,5 @@
 // React related imports
-import React, { useEffect, useRef, useState, } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // Import of machine learning magical libraries 🤖🌟
 import * as ml5 from 'ml5';
@@ -13,17 +13,16 @@ import bite from './assets/bite.png';
 import open from './assets/open.png';
 
 function HandPose(props) {
-
   const [biting, setBiting] = useState(null);
 
   const video_w = 640,
-  video_h = 480;
+    video_h = 480;
 
   const videoRef = useRef(null);
 
   const getVideo = () => {
     navigator.mediaDevices
-      .getUserMedia({ video: { width: video_w, height:  video_h } })
+      .getUserMedia({ video: { width: video_w, height: video_h } })
       .then((stream) => {
         let video = videoRef.current;
         video.srcObject = stream;
@@ -50,7 +49,7 @@ function HandPose(props) {
     console.log('Model Ready!');
     props.sendLoading();
 
-    handpose.on('predict', results => {
+    handpose.on('predict', (results) => {
       const predictions = results[0];
       if (predictions) {
         const estimatedGestures = GE.estimate(predictions.landmarks, 7.5);
@@ -64,7 +63,7 @@ function HandPose(props) {
   useEffect(() => {
     getVideo();
     handPosition(videoRef.current);
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [videoRef]);
 
   return (
@@ -75,9 +74,8 @@ function HandPose(props) {
           className="monster__sprite"
           src={biting ? bite : open}
           alt="monster-sprite"
-          style={{'display': props.isLoading ? 'none' : 'block'}}
-        >
-        </img>
+          style={{ display: props.isLoading ? 'none' : 'block' }}
+        ></img>
       </div>
     </div>
   );
