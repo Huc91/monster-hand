@@ -5,9 +5,6 @@ Use your hand to control the monster
 and deliver powerful bites with machine learning!
 :crocodile::raised_hand:
 
-Check it out here (camera access required):
-https://monster-hand.netlify.app/
-
 ![example](https://media.giphy.com/media/W67zj3OK1SXcaCnQQo/giphy.gif)
 
 Built with [ml5.js](https://ml5js.org/) and [React](https://reactjs.org/)
