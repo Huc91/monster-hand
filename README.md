@@ -7,6 +7,8 @@ and deliver powerful bites with machine learning!
 
 ![example](https://media.giphy.com/media/W67zj3OK1SXcaCnQQo/giphy.gif)
 
+Check it out [here](https://monster-hand.netlify.app/)
+
 Built with [ml5.js](https://ml5js.org/) and [React](https://reactjs.org/)
 
 ## Purpose
